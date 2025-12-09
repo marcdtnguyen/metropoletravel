@@ -1,0 +1,228 @@
+:root {
+  --primary-color: #00aeef;
+  --secondary-color: #fcaf17;
+  --primary-trim: #414042;
+  --sec-trim: #6e6f72;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  padding: 0 20%;
+  display: flex;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  background: linear-gradient(to bottom, white 0%, white 88%, transparent 100%);
+}
+
+.logo,
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  grid-auto-flow: column;
+  justify-content: center;
+}
+
+nav ul li:first-child a {
+  text-decoration: underline;
+}
+
+nav li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li:hover {
+  text-decoration: underline;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--sec-trim);
+}
+
+.header_logo {
+  height: 70px;
+}
+
+main {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 60px;
+}
+
+.hero {
+  position: relative;
+  background-image: url("./img/banner.jpg");
+  background-size: cover;
+  background-position-y: 900px;
+  height: 450px;
+}
+
+.hero::before {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  /* content: "World's leading culture Airline"; */
+  font-size: 2.5rem;
+  color: #176987;
+  font-family: "Arizonia", cursive;
+}
+
+.services {
+  margin: 0 20%;
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.services .card {
+  padding: 0 30px;
+}
+
+.services img {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.services h2 {
+  color: var(--primary-trim);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.services p {
+  color: var(--sec-trim);
+  font-size: 1rem;
+}
+
+.lotus {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 20%;
+}
+
+.lotus .lotusImage {
+  background-image: url("/src/img/lotus.webp");
+  height: 316px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.fade {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.099) 95%,
+    rgba(255, 255, 255) 100%
+  );
+  height: 100%;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  gap: 20px;
+}
+
+.signup h3 {
+  font-family: "Poiret One", sans-serif;
+  color: var(--primary-color);
+  font-size: 3.5rem;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px var(--secondary-color);
+}
+
+.signup p {
+  font-size: 1.2rem;
+}
+
+.signup button {
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  border: 2px solid var(--secondary-color);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 180px;
+  padding: 10px;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px var(--secondary-color);
+}
+
+.destinations {
+  margin-top: 40px;
+  height: 500px;
+  background-size: contain;
+  background-position: 100px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.destinations img {
+  height: fit-content;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+.destinations h3 {
+  font-family: "Poiret One", sans-serif;
+  font-size: 3.5rem;
+  color: white;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px var(--secondary-color);
+  margin: 30px;
+}
+
+.destinations .base {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: max-content;
+  margin: 30px;
+  padding: 15px;
+  box-shadow: 2px 3px 0px 1px var(--primary-color);
+}
+
+.destinations p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.destinations button {
+  color: white;
+  background-color: var(--primary-trim);
+  border-radius: 12px;
+  border: 1px solid var(--sec-trim);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  padding: 10px;
+}
