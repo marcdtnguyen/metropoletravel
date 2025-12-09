@@ -72,7 +72,7 @@ main {
 
 .hero {
   position: relative;
-  background-image: url("./img/banner.jpg");
+  background-image: url("./assets/banner.jpg");
   background-size: cover;
   background-position-y: 900px;
   height: 450px;
@@ -125,7 +125,7 @@ main {
 }
 
 .lotus .lotusImage {
-  background-image: url("/src/img/lotus.webp");
+  background-image: url("/assets/lotus.webp");
   height: 316px;
   background-size: contain;
   background-repeat: no-repeat;
