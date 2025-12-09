@@ -1,3 +1,4 @@
+version: 1
 deployment:
   tasks:
     - export DEPLOYPATH=/home/mptravel/public_html/
