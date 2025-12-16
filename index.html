@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Metropole Travel</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <meta name="description"
+        content="Metropole Travel specialises in Vietnam Airlines flights between Australia and Vietnam. Call for live fares and Vietnamese-speaking support." />
+
+    <!-- TODO: add your CSS file -->
+    <link rel="stylesheet" href="styles.css?v=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Floating primary CTA: jumps to contact section -->
+    <a class="floating-cta" href="#contact" aria-label="Jump to contact section">
+        <!-- Replace with an SVG/icon later -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.54 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.72-1.72a2 2 0 0 1 2.11-.45c.76.24 1.55.42 2.36.54A2 2 0 0 1 22 16.92z" />
+        </svg>
+
+    </a>
+
+    <main>
+
+        <!-- HERO (no header) -->
+        <section id="hero" aria-labelledby="hero-title">
+
+            <img src="assets/header_logo.png" alt="" class="logo">
+
+            <!-- Language toggle lives inside the hero (top-right visually via CSS) -->
+            <div class="lang-toggle" role="group" aria-label="Language toggle">
+                <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+                <button type="button" class="lang-btn" data-lang="vi" aria-pressed="false">VI</button>
+            </div>
+
+            <div class="hero-content">
+                <p class="hero-kicker" data-i18n="hero.kicker">Vietnam Airlines flights • Vietnamese support</p>
+
+                <h1 id="hero-title" data-i18n="hero.title">
+                    Fly to Vietnam with Vietnam Airlines
+                </h1>
+
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
+                    Live fares • Vietnamese-speaking support • Local travel experts
+                </p>
+
+                <!-- Optional: keep hero clean; CTA is floating.
+             If you later want an in-hero CTA, add it here. -->
+            </div>
+
+            <div class="hero-media" aria-hidden="true">
+                <!-- TODO: hero image via CSS background-image or <img> -->
+            </div>
+        </section>
+
+
+        <!-- TRUST / REASSURANCE -->
+        <section id="trust" aria-labelledby="trust-title">
+            <h2 id="trust-title" data-i18n="trust.title">Why customers trust us</h2>
+
+            <ul class="trust-list">
+                <li class="trust-item" data-i18n="trust.items.0">Vietnamese language support</li>
+                <li class="trust-item" data-i18n="trust.items.1">Local shopfront you can visit</li>
+                <li class="trust-item" data-i18n="trust.items.2">Human after-sales support</li>
+                <li class="trust-item" data-i18n="trust.items.3">Family & group travel experience</li>
+            </ul>
+        </section>
+
+
+        <!-- VIETNAM AIRLINES PARTNER BLOCK (static, permanent) -->
+        <section id="partner" aria-labelledby="partner-title">
+            <header class="section-header">
+                <h2 id="partner-title" data-i18n="partner.title">
+                    Vietnam Airlines — Our Primary Airline Partner
+                </h2>
+            </header>
+
+            <div class="partner-content">
+                <p data-i18n="partner.body">
+                    We specialise in Vietnam Airlines flights between Australia and Vietnam. Call us for live fares,
+                    routing advice, and full travel support.
+                </p>
+
+                <ul class="partner-bullets">
+                    <li data-i18n="partner.bullets.0">National carrier of Vietnam</li>
+                    <li data-i18n="partner.bullets.1">Extensive Vietnam network</li>
+                    <li data-i18n="partner.bullets.2">Full-service airline experience</li>
+                </ul>
+
+                <p class="disclaimer" data-i18n="partner.disclaimer">
+                    Fares and conditions vary by fare type. Please call for current availability.
+                </p>
+
+                <!-- Optional: partner logo (only if allowed) -->
+                <img src="assets/primary.jpg" alt="Vietnam Airlines" />
+            </div>
+        </section>
+
+
+        <!-- MONTHLY SPOTLIGHT (manual update monthly) -->
+        <section id="spotlight" aria-labelledby="spotlight-title">
+            <header class="section-header">
+                <h2 id="spotlight-title" data-i18n="spotlight.title">This Month’s Vietnam Airlines Spotlight</h2>
+            </header>
+
+            <article class="spotlight-card" aria-labelledby="spotlight-headline">
+                <figure class="spotlight-media">
+                    <!-- Replace monthly image here -->
+                    <img src="assets/spotlight/current.jpg" alt="" loading="lazy" width="1200" height="675" />
+                </figure>
+
+                <div class="spotlight-body">
+                    <h3 id="spotlight-headline" data-i18n="spotlight.headline">
+                        Seasonal travel support for Vietnam routes
+                    </h3>
+
+                    <ul class="spotlight-bullets">
+                        <li data-i18n="spotlight.bullets.0">Live fare checks and routing advice</li>
+                        <li data-i18n="spotlight.bullets.1">Help for families, elders, and group travel</li>
+                        <li data-i18n="spotlight.bullets.2">Support with changes and rebooking</li>
+                    </ul>
+
+                    <a class="spotlight-cta" href="#contact" data-i18n="spotlight.cta">
+                        Call for today’s Vietnam Airlines fares
+                    </a>
+                </div>
+            </article>
+        </section>
+
+
+        <!-- SOCIAL MEDIA SECTION (progressive enhancement) -->
+        <section id="social" aria-labelledby="social-title">
+            <header class="section-header">
+                <h2 id="social-title" data-i18n="social.title">Latest from Vietnam Airlines</h2>
+                <p data-i18n="social.body">
+                    Follow Vietnam Airlines for announcements and travel updates.
+                </p>
+            </header>
+
+            <div class="social-actions" aria-label="Social links">
+                <!-- Replace href targets with real links -->
+                <a href="https://www.facebook.com/VietnamAirlinesGlobal/" rel="noopener" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/vietnamairlines/?hl=en" rel="noopener" target="_blank">Instagram</a>
+            </div>
+
+            <!-- Embed container (optional). If it fails, fallback still looks intentional. -->
+            <div class="social-embed">
+                <!-- TODO: paste Facebook/Instagram embed code here -->
+            </div>
+
+            <div class="social-fallback" role="note">
+                <p data-i18n="social.fallback">
+                    Social updates may be blocked by your browser settings. You can still follow Vietnam Airlines using
+                    the links above.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- WHY BOOK WITH US (collapsible on mobile) -->
+        <section id="why-us" aria-labelledby="why-title">
+            <h2 id="why-title" data-i18n="why.title">Why book with Metropole Travel</h2>
+
+            <!-- <details> is semantic + accessible (great for mobile collapsible) -->
+            <details class="collapsible" open>
+                <summary data-i18n="why.summary">See reasons</summary>
+
+                <ul class="why-list">
+                    <li data-i18n="why.items.0">We handle changes, disruptions, and rebooking</li>
+                    <li data-i18n="why.items.1">Clear explanations — no confusion with fare rules</li>
+                    <li data-i18n="why.items.2">Support for elders, families, and group travel</li>
+                    <li data-i18n="why.items.3">Local shopfront + phone support</li>
+                </ul>
+            </details>
+        </section>
+
+
+        <!-- HOW BOOKING WORKS (collapsible on mobile) -->
+        <section id="how-it-works" aria-labelledby="how-title">
+            <h2 id="how-title" data-i18n="how.title">How booking works</h2>
+
+            <details class="collapsible">
+                <summary data-i18n="how.summary">View the 3 steps</summary>
+
+                <ol class="steps">
+                    <li data-i18n="how.steps.0">Call us or visit our office</li>
+                    <li data-i18n="how.steps.1">We check live fares and the best options</li>
+                    <li data-i18n="how.steps.2">We book and support you before and after travel</li>
+                </ol>
+            </details>
+        </section>
+
+
+        <!-- CONTACT (anchor target for floating CTA) -->
+        <section id="contact" aria-labelledby="contact-title">
+            <header class="section-header">
+                <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
+                <p data-i18n="contact.body">Call us during business hours for live fares and booking support.</p>
+            </header>
+
+            <address class="contact-card">
+                <p>
+                    <strong data-i18n="contact.phoneLabel">Phone:</strong>
+                    <a href="tel:+61XXXXXXXXX">+61 X XXXX XXXX</a>
+                </p>
+
+                <p>
+                    <strong data-i18n="contact.hoursLabel">Hours:</strong>
+                    <span data-i18n="contact.hours">Mon–Sat 9:00am–4:30pm</span>
+                </p>
+
+                <p>
+                    <strong data-i18n="contact.addressLabel">Address:</strong>
+                    <span data-i18n="contact.address">Your shopfront address here</span>
+                </p>
+            </address>
+
+            <div class="map">
+                <!-- TODO: embed Google map or use a static map image -->
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer id="footer">
+        <div class="footer-inner">
+            <p><strong>Metropole Travel</strong></p>
+
+            <p class="footer-legal" data-i18n="footer.legal">
+                Vietnam Airlines is a registered trademark of Vietnam Airlines JSC. Fares are subject to availability
+                and fare conditions.
+            </p>
+
+            <p class="footer-meta">
+                <small>&copy; <span id="year"></span> Metropole Travel</small>
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Small helper for footer year
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Optional: later you can add JS to switch languages by data-i18n keys -->
+
+</body>
+
+</html>

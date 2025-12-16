@@ -1,0 +1,495 @@
+/* ----------------------------
+   Base / Reset-ish
+---------------------------- */
+
+:root {
+  --brand-blue: #00AEEF;
+  --brand-accent: #FCAF17;
+
+  --text: #0b1220;
+  --muted: #5b677a;
+  --bg: #ffffff;
+  --surface: #f6f8fb;
+  --border: #e6eaf0;
+
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(11, 18, 32, 0.08);
+
+  --max: 1100px;
+  --pad: 18px;
+
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 72px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--brand-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+/* A simple container pattern */
+section,
+footer {
+  padding: var(--space-6) var(--pad);
+}
+
+section>*,
+footer>* {
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----------------------------
+   Typography
+---------------------------- */
+
+@font-face {
+  /* Optional: if you self-host Montserrat later, define it here.
+     For now, your system will fall back gracefully. */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", "Poppins", Arial, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  margin: 0 auto;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+}
+
+p {
+  margin: 0 0 var(--space-3);
+  color: var(--text);
+}
+
+.disclaimer,
+small,
+.footer-legal,
+.hero-kicker {
+  color: var(--muted);
+}
+
+/* ----------------------------
+   Floating CTA
+---------------------------- */
+
+.floating-cta {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  z-index: 1;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--brand-blue);
+  color: white;
+  font-size: 22px;
+  /* border: 2px solid var(--brand-accent); */
+}
+
+.floating-cta:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.floating-cta:active {
+  transform: translateY(0);
+}
+
+.floating-cta svg {
+  width: 20px;
+  height: 20px;
+  color: var(--bg);
+}
+
+
+/* ----------------------------
+   Hero (full screen)
+---------------------------- */
+
+#hero {
+  padding: 0;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero inner layout */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--space-7) var(--pad) var(--space-6);
+}
+
+.hero-kicker {
+  font-size: 0.95rem;
+  margin-bottom: var(--space-2);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+/* Optional hero media area (if you later add an <img> or background) */
+.hero-media {
+  display: none;
+  /* keep simple for now */
+}
+
+.logo {
+  position: absolute;
+  top: var(--space-5);
+  left: var(--space-5);
+  z-index: 2;
+  width: clamp(130px, 18vw, 220px);
+  height: auto;
+}
+
+/* Language toggle in top-right of hero */
+.lang-toggle {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  z-index: 2;
+
+  display: inline-flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.lang-btn.is-active {
+  background: var(--brand-blue);
+  color: white;
+}
+
+/* ----------------------------
+   Section headers
+---------------------------- */
+
+.section-header {
+  margin-bottom: var(--space-4);
+}
+
+.section-header p {
+  max-width: 70ch;
+  color: var(--muted);
+}
+
+/* ----------------------------
+   Trust section
+---------------------------- */
+
+#trust {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.trust-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: 0 8px 20px rgba(11, 18, 32, 0.04);
+}
+
+/* ----------------------------
+   Partner block
+---------------------------- */
+
+#partner .partner-content {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: 0 8px 24px rgba(11, 18, 32, 0.04);
+}
+
+.partner-bullets,
+.spotlight-bullets,
+.why-list {
+  margin: var(--space-3) 0 0;
+  padding-left: 18px;
+  color: var(--text);
+}
+
+.partner-bullets li,
+.spotlight-bullets li,
+.why-list li {
+  margin-bottom: 8px;
+}
+
+/* ----------------------------
+   Monthly Spotlight
+---------------------------- */
+
+.spotlight-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 12px 30px rgba(11, 18, 32, 0.06);
+}
+
+.spotlight-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.spotlight-body {
+  padding: var(--space-4);
+}
+
+.spotlight-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-3);
+
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: var(--brand-blue);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.spotlight-cta:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* ----------------------------
+   Social section
+---------------------------- */
+
+.social-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: var(--space-2) auto;
+}
+
+.social-actions a {
+  display: inline-flex;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: white;
+  color: var(--text);
+}
+
+.social-actions a:hover {
+  text-decoration: none;
+  border-color: rgba(0, 174, 239, 0.45);
+}
+
+.social-embed {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.social-fallback {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+}
+
+/* ----------------------------
+   Collapsible sections (Why / How)
+---------------------------- */
+
+.collapsible {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  padding: var(--space-2);
+}
+
+.collapsible summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  list-style: none;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.collapsible summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.collapsible ul,
+.collapsible ol {
+  padding: var(--space-3) var(--space-4) var(--space-3) 28px;
+  margin: 0;
+}
+
+/* ----------------------------
+   Contact
+---------------------------- */
+
+.contact-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  padding: var(--space-4);
+  box-shadow: 0 10px 26px rgba(11, 18, 32, 0.05);
+}
+
+.contact-card p {
+  margin-bottom: var(--space-2);
+}
+
+.map {
+  margin-top: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  min-height: 240px;
+}
+
+/* ----------------------------
+   Footer
+---------------------------- */
+
+#footer {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+.footer-inner p {
+  margin-bottom: 10px;
+}
+
+.footer-legal {
+  max-width: 80ch;
+}
+
+/* ----------------------------
+   Desktop enhancements
+---------------------------- */
+
+@media (min-width: 900px) {
+  :root {
+    --pad: 24px;
+  }
+
+  .trust-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Spotlight becomes a 2-column card on desktop */
+  .spotlight-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+  }
+
+  .spotlight-media img {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  /* Make hero feel more premium on desktop */
+  .hero-content {
+    padding-top: 96px;
+    padding-bottom: 72px;
+  }
+}
