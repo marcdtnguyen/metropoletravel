@@ -376,6 +376,11 @@ small,
   background: white;
   overflow: hidden;
   min-height: 120px;
+  display: grid;
+      justify-items: center;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  padding: var(--space-2);
 }
 
 .social-fallback {
@@ -384,6 +389,26 @@ small,
   border-radius: var(--radius);
   background: var(--surface);
   border: 1px dashed var(--border);
+}
+
+.social-item iframe {
+  display: block;
+  max-width: 100% !important;
+  border: 0;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .social-embed {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: normal;
+  }
+}
+
+.social-item {
+  background: white;
+  overflow: hidden;
 }
 
 /* ----------------------------
