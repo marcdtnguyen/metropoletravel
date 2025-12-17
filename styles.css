@@ -563,7 +563,7 @@ small,
 @media (min-width: 900px) {
   .social-embed {
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: start;
     justify-items: normal;
   }
 }
