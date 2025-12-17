@@ -35,6 +35,23 @@
 
 html {
   scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
+}
+
+html::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/watermark.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 100%;
+  opacity: 0.2;
+  /* critical: keep low */
+  z-index: 0;
+  pointer-events: none;
 }
 
 body {
@@ -43,6 +60,8 @@ body {
   background: var(--bg);
   font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   line-height: 1.6;
+  position: relative;
+  min-height: 100%;
 }
 
 img {
@@ -61,6 +80,7 @@ a:hover {
 
 main {
   overflow-x: hidden;
+  position: relative;
 }
 
 /* A simple container pattern */
@@ -141,6 +161,10 @@ small,
   /* border: 2px solid var(--brand-accent); */
 }
 
+.floating-cta:focus {
+  outline: none;
+}
+
 .floating-cta:hover {
   text-decoration: none;
   transform: translateY(-1px);
@@ -155,7 +179,6 @@ small,
   height: 20px;
   color: var(--bg);
 }
-
 
 /* ----------------------------
    Hero (full screen)
@@ -201,8 +224,9 @@ small,
   top: var(--space-5);
   left: var(--space-5);
   z-index: 2;
-  width: clamp(130px, 18vw, 220px);
+  width: clamp(160px, 25vw, 220px);
   height: auto;
+  /* box-shadow: 0px 0px 10px 20px #ffffff; */
 }
 
 /* Language toggle in top-right of hero */
@@ -254,7 +278,7 @@ small,
 ---------------------------- */
 
 #trust {
-  background: var(--surface);
+  /* background: var(--surface); */
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -302,6 +326,144 @@ small,
 .why-list li {
   margin-bottom: 8px;
 }
+
+/* Schedule layout */
+#flight-schedule .muted {
+  color: var(--muted);
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 900px) {
+  .schedule-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+.route-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: 0 10px 26px rgba(11, 18, 32, 0.05);
+  overflow: hidden;
+  grid-row: span 2;
+}
+
+.route-card.route-card-static {
+  grid-row: span 1;
+}
+
+.route-card>summary {
+  list-style: none;
+}
+
+.route-card>summary::-webkit-details-marker {
+  display: none;
+}
+
+.route-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  cursor: pointer;
+}
+
+.route-summary.static {
+  cursor: default;
+}
+
+.route-title {
+  font-family: "Montserrat", "Poppins", Arial, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.route-sub {
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.route-body {
+  border-top: 1px solid var(--border);
+  padding: 14px 18px 18px;
+}
+
+.flight-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.flight-row:last-child {
+  border-bottom: 0;
+}
+
+.flight-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.flight-no {
+  font-weight: 800;
+  color: var(--brand-blue);
+}
+
+.days {
+  font-weight: 700;
+}
+
+.dir {
+  font-size: 0.95rem;
+}
+
+.flight-times {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-right: 6px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.pill-warn {
+  border-color: rgba(252, 175, 23, 0.45);
+}
+
+.note {
+  margin-top: 12px;
+  color: var(--muted);
+  font-style: italic;
+}
+
 
 /* ----------------------------
    Monthly Spotlight
@@ -377,7 +539,7 @@ small,
   overflow: hidden;
   min-height: 120px;
   display: grid;
-      justify-items: center;
+  justify-items: center;
   grid-template-columns: 1fr;
   gap: var(--space-2);
   padding: var(--space-2);
